@@ -1,0 +1,51 @@
+spring.profiles.active: dev
+
+---
+
+
+spring:
+  profiles: dev
+  main:
+    allow-bean-definition-overriding: true
+  #datasource:
+    #url: jdbc:mysql://localhost:3306/test
+    #username: root
+    #password: root
+    #tomcat:
+      #test-while-idle: true
+      #validationQuery: SELECT 1
+  #jpa:
+    #show-sql: true
+    #hibernate:
+      #ddl-auto: validate
+      #naming:
+        #physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+        #implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+    #properties:
+      #hibernate:
+        #dialect: org.hibernate.dialect.MySQL5Dialect
+  session:
+    store-type: redis
+  messages:
+    cache-duration: 2m
+  thymeleaf:
+    cache: false
+  redis:
+    host: localhost
+    port: 6379
+    #password:
+  data:
+    redis:
+      repositories:
+        enabled: true
+
+server:
+  servlet:
+    session:
+      timeout: 10m
+
+test:
+  relay:
+    host: localhost
+    port: 61613
+debug: true
